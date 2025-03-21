@@ -1,5 +1,4 @@
 #!/bin/bash
 set -ex
 
-apt-get update
-apt-get install k6
+brew install k6
