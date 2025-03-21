@@ -1,7 +1,7 @@
 pipeline {
   agent any
-environment {
-        PATH = "/usr/local/opt/k6"
+ environment {
+        PATH = "/usr/local/bin:$PATH"
     }
   stages {
     stage('installing k6') {
