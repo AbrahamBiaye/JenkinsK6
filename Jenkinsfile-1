@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('verify k6') {
+    stage('installing k6') {
       steps {
-        sh 'k6 version'
+        sh 'brew install k6'
       }
     }
     stage('run k6 test') {
