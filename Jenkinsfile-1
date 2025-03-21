@@ -1,18 +1,14 @@
 pipeline {
-  agent any
- environment {
-        PATH = "/usr/local/bin:$PATH"
+    agent any
+    stages {
+        stage('Performance Testing') {
+            steps {
+                echo 'Installing k6'
+                sh 'sudo chmod +x setup_k6.sh'
+                sh 'sudo ./setup_k6.sh'
+                echo 'Running K6 performance tests...'
+                sh 'k6 run test.js'
+            }
+        }
     }
-  stages {
-    stage('installing k6') {
-      steps {
-        sh 'brew install k6'
-      }
-    }
-    stage('run k6 test') {
-      steps {
-        sh 'k6 run script.js'
-      }
-    }
-  }
 }
