@@ -1,5 +1,5 @@
 #!/bin/bash
 set -ex
 
-sudo apt-get update
-sudo apt-get install k6
+apt-get update
+apt-get install k6
